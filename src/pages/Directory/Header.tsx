@@ -25,10 +25,10 @@ function Header({ onSelectProvince, selectedProvince }: IHeader) {
     });
     return () => {
       document.removeEventListener("mousedown", () => {
-        handleShowMenu();
+        setShowMenu(!showMenu);
       });
     };
-  }, []);
+  }, [showMenu]);
 
   return (
     <Styles.Root>
