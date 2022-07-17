@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { fetchProviders } from "../../api";
 import { IMakePartialRepresentation } from "../../interfaces/api";
 import ProfileCard from "./ProfileCard";
 import { Helmet } from "react-helmet";
 import Header from "./Header";
 import { provinceByAbbr } from "../../utils/provinces";
+import * as Styles from "./Directory.styles";
+import Typography from "../../components/Typography";
 
 const DEFAULT_PROVINCE = "ON";
 
@@ -33,7 +34,7 @@ export default function Directory() {
   }, []);
 
   return (
-    <div>
+    <Styles.Root>
       <Helmet>
         <title>Provider Directory</title>
       </Helmet>
@@ -41,16 +42,33 @@ export default function Directory() {
         onSelectProvince={handleSelectProvince}
         selectedProvince={selectedProvince}
       />
-      <p>{providers.length}</p>
-      <p>providers in Ontario</p>
-      directory
-      {providers.length > 0 &&
-        filterProviders().map((provider) => (
-          <div key={provider.id}>
-            <Link to={`/profile/${provider.id}`}>Profile</Link>
-            <ProfileCard provider={provider} />
-          </div>
-        ))}
-    </div>
+      <Styles.ProviderContainer>
+        <div>
+          <Typography
+            fontSize={14}
+            lineHeight={16.8}
+            color={"#1C1E24"}
+            fontWeight={500}
+          >
+            {providers.length}
+          </Typography>
+          <Typography
+            fontSize={14}
+            lineHeight={16.8}
+            color={"#3F4145"}
+            fontWeight={400}
+          >
+            providers in {provinceByAbbr(selectedProvince)}
+          </Typography>
+
+          {providers.length > 0 &&
+            filterProviders().map((provider) => (
+              <div key={provider.id}>
+                <ProfileCard provider={provider} />
+              </div>
+            ))}
+        </div>
+      </Styles.ProviderContainer>
+    </Styles.Root>
   );
 }

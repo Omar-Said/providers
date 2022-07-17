@@ -1,5 +1,7 @@
 // This file contains the two API functions which you'll use: fetchProviders, and fetchProviders
 
+import avatar from "./assets/images/avatar.jpg";
+
 import {
   IMakePartialRepresentation,
   IMakeFullRepresentation,
@@ -49,6 +51,7 @@ const makePartialRepresentation = ({
   id,
   name,
   title,
+  occupation,
   avatarUrl,
   bio,
   availabilty,
@@ -57,6 +60,7 @@ const makePartialRepresentation = ({
   id,
   name,
   title,
+  occupation,
   avatarUrl,
   bio,
   availabilty,
@@ -68,7 +72,8 @@ const fullDataset = [
     id: "1",
     name: "Caroline Champagne",
     title: "MSW",
-    avatarUrl: "",
+    occupation: "Registered Social Worker",
+    avatarUrl: avatar,
     availabilty: "tomorrow",
     location: "Quebec City, Quebec",
     education: "Concordia University\n",
@@ -87,7 +92,8 @@ const fullDataset = [
     id: "2",
     name: "Tamara Childs",
     title: "MA, RCC",
-    avatarUrl: "",
+    occupation: "Psychologist",
+    avatarUrl: avatar,
     availabilty: "next-week",
     location: "Toronto, Ontario",
     education: "University of Toronto",
@@ -108,7 +114,8 @@ const fullDataset = [
     id: "3",
     name: "Francois-Pierre Decoste",
     title: "MSW",
-    avatarUrl: "",
+    occupation: "Registered Social Worker",
+    avatarUrl: avatar,
     availabilty: "tomorrow",
     location: "Montreal, Quebec",
     education: "McGill",
@@ -123,7 +130,8 @@ const fullDataset = [
     id: "4",
     name: "Marco DiCroce",
     title: "MSW",
-    avatarUrl: "",
+    occupation: "Psychologist",
+    avatarUrl: avatar,
     availabilty: "tomorrow",
     location: "Toronto, Ontario",
     education: "University of Toronto",

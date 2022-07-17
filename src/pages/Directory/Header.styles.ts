@@ -3,11 +3,14 @@ import styled from "styled-components";
 export const Root = styled.header`
   width: 100%;
   background-color: #fff;
-  margin: 0 auto;
-  max-height: 500px;
-  overflow: hidden;
+  height: 192px;
   padding: 20px 20px 20px 20px;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+`;
+
+export const HeaderContainer = styled.div`
+  width: 600px;
 `;
 
 export const LocationContainer = styled.div`

@@ -10,6 +10,7 @@ const Typography: React.FC<TypographyProps> = ({
   textAlignCenter = false,
   lineHeight = fontSize * 1.2,
   marginBottom = 0,
+  ellipsis = false,
   children,
 }) => {
   return (
@@ -21,6 +22,7 @@ const Typography: React.FC<TypographyProps> = ({
       textAlignCenter={textAlignCenter}
       lineHeight={lineHeight}
       marginBottom={marginBottom}
+      ellipsis={ellipsis}
     >
       {children}
     </Styles.Root>

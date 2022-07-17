@@ -6,7 +6,7 @@ html, body, #root  {
   width: 100%;
   font-family: "Helvetica Neue";
   margin: 0;
-  background-color: #efefef;
+  background-color: #f6f7f7;
 }
 
 input {

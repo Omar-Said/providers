@@ -8,5 +8,6 @@ export interface TypographyProps {
   textAlignCenter?: boolean;
   lineHeight?: number;
   marginBottom?: number;
+  ellipsis?: boolean;
   children?: ReactNode;
 }

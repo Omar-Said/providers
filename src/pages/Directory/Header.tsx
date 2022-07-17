@@ -32,38 +32,40 @@ function Header({ onSelectProvince, selectedProvince }: IHeader) {
 
   return (
     <Styles.Root>
-      <Typography fontSize={24} lineHeight={28.8} marginBottom={10}>
-        Browse our providers
-      </Typography>
-      <Typography fontSize={14.8} color={"#6F737A"} marginBottom={20}>
-        Mental Wellness
-      </Typography>
-
-      <Styles.LocationContainer onClick={handleShowMenu}>
-        <img
-          style={{ height: "12.35px", marginRight: "7.07px" }}
-          src={locationIcon}
-          alt="location pin"
-        />
-        <Typography fontSize={14} fontWeight={500}>
-          {selectedProvince}
+      <Styles.HeaderContainer>
+        <Typography fontSize={24} lineHeight={28.8} marginBottom={10}>
+          Browse our providers
         </Typography>
-      </Styles.LocationContainer>
-      {showMenu && (
-        <Styles.NavMenu ref={navMenu}>
-          {provinces.map((province) => (
-            <Styles.NavMenuItem
-              key={province.abbreviation}
-              onClick={() => {
-                handleShowMenu();
-                onSelectProvince(province.abbreviation);
-              }}
-            >
-              {province.abbreviation}
-            </Styles.NavMenuItem>
-          ))}
-        </Styles.NavMenu>
-      )}
+        <Typography fontSize={14.8} color={"#6F737A"} marginBottom={20}>
+          Mental Wellness
+        </Typography>
+
+        <Styles.LocationContainer onClick={handleShowMenu}>
+          <img
+            style={{ height: "12.35px", marginRight: "7.07px" }}
+            src={locationIcon}
+            alt="location pin"
+          />
+          <Typography fontSize={14} fontWeight={500}>
+            {selectedProvince}
+          </Typography>
+        </Styles.LocationContainer>
+        {showMenu && (
+          <Styles.NavMenu ref={navMenu}>
+            {provinces.map((province) => (
+              <Styles.NavMenuItem
+                key={province.abbreviation}
+                onClick={() => {
+                  handleShowMenu();
+                  onSelectProvince(province.abbreviation);
+                }}
+              >
+                {province.abbreviation}
+              </Styles.NavMenuItem>
+            ))}
+          </Styles.NavMenu>
+        )}
+      </Styles.HeaderContainer>
     </Styles.Root>
   );
 }

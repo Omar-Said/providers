@@ -8,6 +8,7 @@ export const Root = styled.div<{
   textAlignCenter: boolean;
   lineHeight: number;
   marginBottom: number;
+  ellipsis: boolean;
 }>`
   color: ${(props) => props.color};
   font-size: ${(props) => props.fontSize}px;
@@ -26,6 +27,18 @@ export const Root = styled.div<{
       width: 100%;
       height: 50px;
       padding-top: 1rem;
+    `};
+  ${(props) =>
+    props.ellipsis &&
+    css`
+      // text-overflow: ellipsis;
+      // overflow: hidden;
+      // white-space: nowrap;
+      // width: 200px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     `};
   font-family: "Helvetica Neue";
 `;
