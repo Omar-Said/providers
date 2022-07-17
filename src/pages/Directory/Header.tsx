@@ -3,6 +3,7 @@ import * as Styles from "./Header.styles";
 import locationPin from "../../assets/icons/locationPin.svg";
 import Typography from "../../components/Typography";
 import { provinces } from "../../utils/provinces";
+import ArrowIcon from "../../assets/icons/readLess.png";
 
 interface IHeader {
   onSelectProvince: (province: string) => void;
@@ -46,21 +47,44 @@ function Header({ onSelectProvince, selectedProvince }: IHeader) {
             src={locationPin}
             alt="location pin"
           />
-          <Typography fontSize={14} fontWeight={500}>
+          <Typography
+            fontSize={14}
+            fontWeight={500}
+            lineHeight={16.8}
+            color={"#3F4145"}
+          >
             {selectedProvince}
+            <img
+              style={{
+                marginLeft: "10px",
+                marginBottom: "2px",
+                transform: `${showMenu ? "rotate(180deg)" : ""}`,
+              }}
+              src={ArrowIcon}
+              alt="arrow icon"
+            />
           </Typography>
         </Styles.LocationContainer>
         {showMenu && (
           <Styles.NavMenu ref={navMenu}>
             {provinces.map((province) => (
               <Styles.NavMenuItem
+                id="nav-item"
                 key={province.abbreviation}
                 onClick={() => {
                   handleShowMenu();
                   onSelectProvince(province.abbreviation);
                 }}
               >
-                {province.name}
+                <Typography
+                  fontSize={14}
+                  fontWeight={500}
+                  lineHeight={16.8}
+                  color={"#3F4145"}
+                  hover
+                >
+                  {province.name}
+                </Typography>
               </Styles.NavMenuItem>
             ))}
           </Styles.NavMenu>

@@ -11,5 +11,6 @@ export interface TypographyProps {
   ellipsis?: boolean;
   marginTop?: number;
   marginRight?: number;
+  hover?: boolean;
   children?: ReactNode;
 }

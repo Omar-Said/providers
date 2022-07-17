@@ -11,6 +11,7 @@ export const Root = styled.div<{
   marginTop: number;
   ellipsis: boolean;
   marginRight: number;
+  hover: boolean;
 }>`
   color: ${(props) => props.color};
   font-size: ${(props) => props.fontSize}px;
@@ -39,6 +40,13 @@ export const Root = styled.div<{
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
+    `};
+  ${(props) =>
+    props.hover &&
+    css`
+      :hover {
+        color: white;
+      }
     `};
   font-family: "Helvetica Neue";
 `;
