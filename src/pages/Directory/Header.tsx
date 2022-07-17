@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import * as Styles from "./Header.styles";
-import locationIcon from "../../assets/icons/location.svg";
+import locationPin from "../../assets/icons/locationPin.svg";
 import Typography from "../../components/Typography";
 import { provinces } from "../../utils/provinces";
 
@@ -43,7 +43,7 @@ function Header({ onSelectProvince, selectedProvince }: IHeader) {
         <Styles.LocationContainer onClick={handleShowMenu}>
           <img
             style={{ height: "12.35px", marginRight: "7.07px" }}
-            src={locationIcon}
+            src={locationPin}
             alt="location pin"
           />
           <Typography fontSize={14} fontWeight={500}>
@@ -60,7 +60,7 @@ function Header({ onSelectProvince, selectedProvince }: IHeader) {
                   onSelectProvince(province.abbreviation);
                 }}
               >
-                {province.abbreviation}
+                {province.name}
               </Styles.NavMenuItem>
             ))}
           </Styles.NavMenu>

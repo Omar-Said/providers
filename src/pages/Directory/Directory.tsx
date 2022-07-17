@@ -7,6 +7,7 @@ import Header from "./Header";
 import { provinceByAbbr } from "../../utils/provinces";
 import * as Styles from "./Directory.styles";
 import Typography from "../../components/Typography";
+import FlexWrapper from "../../components/FlexWrapper";
 
 const DEFAULT_PROVINCE = "ON";
 
@@ -43,14 +44,15 @@ export default function Directory() {
         selectedProvince={selectedProvince}
       />
       <Styles.ProviderContainer>
-        <div>
+        <FlexWrapper marginTop={19} marginBottom={20}>
           <Typography
             fontSize={14}
             lineHeight={16.8}
             color={"#1C1E24"}
             fontWeight={500}
+            marginRight={2}
           >
-            {providers.length}
+            {filterProviders().length}
           </Typography>
           <Typography
             fontSize={14}
@@ -60,14 +62,13 @@ export default function Directory() {
           >
             providers in {provinceByAbbr(selectedProvince)}
           </Typography>
-
-          {providers.length > 0 &&
-            filterProviders().map((provider) => (
-              <div key={provider.id}>
-                <ProfileCard provider={provider} />
-              </div>
-            ))}
-        </div>
+        </FlexWrapper>
+        {providers.length > 0 &&
+          filterProviders().map((provider) => (
+            <div key={provider.id}>
+              <ProfileCard provider={provider} />
+            </div>
+          ))}
       </Styles.ProviderContainer>
     </Styles.Root>
   );

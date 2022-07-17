@@ -9,5 +9,7 @@ export interface TypographyProps {
   lineHeight?: number;
   marginBottom?: number;
   ellipsis?: boolean;
+  marginTop?: number;
+  marginRight?: number;
   children?: ReactNode;
 }

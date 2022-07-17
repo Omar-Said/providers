@@ -6,6 +6,9 @@ export const Root = styled.div`
 `;
 
 export const ProviderContainer = styled.div`
-  border-top: 1px solid #dfe1e6;
   height: 100%;
+  width: 598px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 `;

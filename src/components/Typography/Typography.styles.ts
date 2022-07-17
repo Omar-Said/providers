@@ -8,13 +8,17 @@ export const Root = styled.div<{
   textAlignCenter: boolean;
   lineHeight: number;
   marginBottom: number;
+  marginTop: number;
   ellipsis: boolean;
+  marginRight: number;
 }>`
   color: ${(props) => props.color};
   font-size: ${(props) => props.fontSize}px;
   font-weight: ${(props) => props.fontWeight};
   line-height: ${(props) => props.lineHeight}px;
   margin-bottom: ${(props) => props.marginBottom}px;
+  margin-top: ${(props) => props.marginTop}px;
+  margin-right: ${(props) => props.marginRight}px;
   ${(props) =>
     props.capitalize &&
     css`
@@ -31,10 +35,6 @@ export const Root = styled.div<{
   ${(props) =>
     props.ellipsis &&
     css`
-      // text-overflow: ellipsis;
-      // overflow: hidden;
-      // white-space: nowrap;
-      // width: 200px;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;

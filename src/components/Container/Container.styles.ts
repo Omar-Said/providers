@@ -1,15 +1,41 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const Root = styled.div<{ color: string }>`
+export const Root = styled.div<{
+  color: string;
+  width: number;
+  height: number;
+  paddingLeft: number;
+  paddingTop: number;
+  paddingRight: number;
+  paddingBottom: number;
+  marginTop: number;
+  marginLeft: number;
+  isFitContent: boolean;
+  borderBottom: boolean;
+}>`
   background: ${(props) => props.color};
-  width: 598px;
-  margin: 0 auto;
-  margin-top: 6px;
-  height: 167px;
+  width: ${(props) => props.width}px;
+  height: ${(props) => props.height}px;
+  ${(props) =>
+    props.borderBottom &&
+    css`
+      border-bottom: 1px solid #eeee;
+    `}
+  ${(props) =>
+    props.isFitContent &&
+    css`
+      height: fit-content;
+    `}
+  padding-left: ${(props) => props.paddingLeft}px;
+  padding-top: ${(props) => props.paddingTop}px;
+  padding-right: ${(props) => props.paddingRight}px;
+  padding-bottom: ${(props) => props.paddingBottom}px;
+  margin-top: ${(props) => props.marginTop}px;
+  margin-left: ${(props) => props.marginLeft}px;
+
   overflow: hidden;
   overflow-y: scroll;
   ::-webkit-scrollbar {
     display: none;
   }
-  padding: 10px 16px 14px 16px;
 `;

@@ -4,9 +4,10 @@ export const Root = styled.header`
   width: 100%;
   background-color: #fff;
   height: 192px;
-  padding: 20px 20px 20px 20px;
+  padding: 40px 20px 38px 75px;
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid #dfe1e6;
 `;
 
 export const HeaderContainer = styled.div`
@@ -21,6 +22,7 @@ export const LocationContainer = styled.div`
   height: 37px;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 export const NavMenu = styled.ul`
@@ -31,4 +33,5 @@ export const NavMenu = styled.ul`
 
 export const NavMenuItem = styled.li`
   list-style: none;
+  cursor: pointer;
 `;
