@@ -1,6 +1,9 @@
 // This file contains the two API functions which you'll use: fetchProviders, and fetchProviders
 
-import avatar from "./assets/images/avatar.jpg";
+import avatar from "./assets/images/avatar.png";
+import avatar1 from "./assets/images/avatar1.png";
+import avatar2 from "./assets/images/avatar2.png";
+import avatar3 from "./assets/images/avatar3.png";
 
 import {
   IMakePartialRepresentation,
@@ -93,7 +96,7 @@ const fullDataset = [
     name: "Tamara Childs",
     title: "MA, RCC",
     occupation: "Psychologist",
-    avatarUrl: avatar,
+    avatarUrl: avatar1,
     availabilty: "next-week",
     location: "Toronto, Ontario",
     education: "University of Toronto",
@@ -115,7 +118,7 @@ const fullDataset = [
     name: "Francois-Pierre Decoste",
     title: "MSW",
     occupation: "Registered Social Worker",
-    avatarUrl: avatar,
+    avatarUrl: avatar2,
     availabilty: "tomorrow",
     location: "Montreal, Quebec",
     education: "McGill",
@@ -131,7 +134,7 @@ const fullDataset = [
     name: "Marco DiCroce",
     title: "MSW",
     occupation: "Psychologist",
-    avatarUrl: avatar,
+    avatarUrl: avatar3,
     availabilty: "tomorrow",
     location: "Toronto, Ontario",
     education: "University of Toronto",

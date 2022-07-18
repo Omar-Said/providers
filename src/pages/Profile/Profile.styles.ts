@@ -36,3 +36,10 @@ export const ProfileContainer = styled.div`
 export const ProfileWrapper = styled.div`
   cursor: pointer;
 `;
+
+export const ProfileError = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+`;

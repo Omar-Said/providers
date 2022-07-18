@@ -19,8 +19,11 @@ function Header({ onSelectProvince, selectedProvince }: IHeader) {
   };
 
   useEffect(() => {
-    document.addEventListener("mousedown", (e: any) => {
-      if (navMenu.current && !navMenu.current.contains(e.target)) {
+    document.addEventListener("mousedown", (e) => {
+      if (
+        navMenu.current &&
+        !navMenu.current.contains(e.target as HTMLElement)
+      ) {
         setShowMenu(false);
       }
     });

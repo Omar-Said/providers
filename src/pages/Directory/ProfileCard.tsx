@@ -64,7 +64,7 @@ function ProfileCard({ provider }: IProfileCard) {
         <Styles.ProfileTag>
           <Typography
             fontSize={12}
-            lineHeight={19.6}
+            lineHeight={13.2}
             color={"#3F4145"}
             fontWeight={500}
           >
