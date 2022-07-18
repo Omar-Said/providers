@@ -1,14 +1,20 @@
 // This file contains the two API functions which you'll use: fetchProviders, and fetchProviders
 
-import avatar from "./assets/images/avatar.png";
-import avatar1 from "./assets/images/avatar1.png";
-import avatar2 from "./assets/images/avatar2.png";
-import avatar3 from "./assets/images/avatar3.png";
+export interface IMakePartialRepresentation {
+  id: string;
+  name: string;
+  title: string;
+  occupation: string;
+  avatarUrl: string;
+  bio: string;
+  availabilty: string;
+  location: string;
+}
 
-import {
-  IMakePartialRepresentation,
-  IMakeFullRepresentation,
-} from "./interfaces/api";
+export interface IMakeFullRepresentation extends IMakePartialRepresentation {
+  education: string;
+  languages: string[];
+}
 
 /**
  * We are mimicking a REST request here, so it takes a half sec to respond
@@ -76,7 +82,7 @@ const fullDataset = [
     name: "Caroline Champagne",
     title: "MSW",
     occupation: "Registered Social Worker",
-    avatarUrl: avatar,
+    avatarUrl: "avatar.png",
     availabilty: "tomorrow",
     location: "Quebec City, Quebec",
     education: "Concordia University\n",
@@ -96,7 +102,7 @@ const fullDataset = [
     name: "Tamara Childs",
     title: "MA, RCC",
     occupation: "Psychologist",
-    avatarUrl: avatar1,
+    avatarUrl: "avatar1.png",
     availabilty: "next-week",
     location: "Toronto, Ontario",
     education: "University of Toronto",
@@ -118,7 +124,7 @@ const fullDataset = [
     name: "Francois-Pierre Decoste",
     title: "MSW",
     occupation: "Registered Social Worker",
-    avatarUrl: avatar2,
+    avatarUrl: "avatar2.png",
     availabilty: "tomorrow",
     location: "Montreal, Quebec",
     education: "McGill",
@@ -134,7 +140,7 @@ const fullDataset = [
     name: "Marco DiCroce",
     title: "MSW",
     occupation: "Psychologist",
-    avatarUrl: avatar3,
+    avatarUrl: "avatar3.png",
     availabilty: "tomorrow",
     location: "Toronto, Ontario",
     education: "University of Toronto",

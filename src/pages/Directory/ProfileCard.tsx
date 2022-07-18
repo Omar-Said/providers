@@ -2,7 +2,7 @@ import Container from "../../components/Container";
 import Typography from "../../components/Typography";
 import Avatar from "../../components/Avatar";
 import FlexWrapper from "../../components/FlexWrapper";
-import { IMakePartialRepresentation } from "../../interfaces/api";
+import { IMakePartialRepresentation } from "../../api";
 import * as Styles from "./ProfileCard.styles";
 
 interface IProfileCard {
@@ -23,7 +23,7 @@ function ProfileCard({ provider }: IProfileCard) {
       >
         <FlexWrapper>
           <Avatar
-            imageSource={provider.avatarUrl}
+            imageSource={`../images/${provider.avatarUrl}`}
             altText="provider image"
             height={56}
             width={56}

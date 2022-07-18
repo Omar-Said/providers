@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import { fetchProvider } from "../../api";
 import Typography from "../../components/Typography";
-import { IMakeFullRepresentation } from "../../interfaces/api";
+import { IMakeFullRepresentation } from "../../api";
 import arrowIcon from "../../assets/icons/arrowIcon.png";
 import FlexWrapper from "../../components/FlexWrapper";
 import * as Styles from "./Profile.styles";
@@ -14,7 +14,9 @@ import LocationMarker from "../../assets/icons/locationMarker.svg";
 import Education from "../../assets/icons/education.svg";
 import Language from "../../assets/icons/language.svg";
 import Spinner from "../../components/Spinner/Spinner";
-import ProfileDetails from "./ProfileDetails";
+import Details from "../../components/Details/Details";
+import Bio from "../../components/Bio/Bio";
+import TabTitle from "../../components/Helmet/Helmet";
 
 function Profile() {
   const [provider, setProvider] = useState<IMakeFullRepresentation>();
@@ -84,7 +86,7 @@ function Profile() {
         </FlexWrapper>
         <FlexWrapper>
           <Avatar
-            imageSource={provider?.avatarUrl || ""}
+            imageSource={`../images/${provider?.avatarUrl}` || ""}
             altText={"provider image"}
             height={289}
             width={289}
@@ -102,34 +104,13 @@ function Profile() {
               paddingTop={24}
               isFitContent
             >
-              <Typography
-                color={"#1C1E24"}
-                fontWeight={500}
-                fontSize={18}
-                lineHeight={21.6}
-              >
-                {provider?.name}, {provider?.title}
-              </Typography>
-              <Typography
-                color={"#6E7178"}
-                fontWeight={500}
-                fontSize={14}
-                lineHeight={16.8}
-                marginTop={6}
-                marginBottom={12}
-              >
-                {provider?.occupation}
-              </Typography>
-              <Typography
-                color={"#6E7178"}
-                fontWeight={400}
-                fontSize={14}
-                lineHeight={19.6}
-                marginTop={6}
-                ellipsis={isReadLess}
-              >
-                {provider?.bio}
-              </Typography>
+              <Bio
+                name={provider?.name}
+                title={provider?.title}
+                occupation={provider?.occupation}
+                bio={provider?.bio}
+                isReadLess={isReadLess}
+              />
               <Styles.ProfileWrapper onClick={handleReadLess}>
                 <Typography
                   color={"#6277F0"}
@@ -160,17 +141,20 @@ function Profile() {
               paddingRight={32}
               paddingTop={8}
             >
-              <ProfileDetails
+              <Details
                 icon={LocationMarker}
                 detail={provider?.location || ""}
+                title="Location"
               />
-              <ProfileDetails
+              <Details
                 icon={Education}
                 detail={provider?.education || ""}
+                title="Education"
               />
-              <ProfileDetails
+              <Details
                 icon={Language}
                 detail={provider?.languages.join(", ") || ""}
+                title="Language"
               />
               <Styles.ProfileTag>
                 <Typography
@@ -192,9 +176,7 @@ function Profile() {
   }
   return (
     <Styles.Root>
-      <Helmet>
-        <title>Provider Profile</title>
-      </Helmet>
+      <TabTitle title="Provider Profile" />
       {!loading ? <>{returnedComponent}</> : <Spinner />}
     </Styles.Root>
   );

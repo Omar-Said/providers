@@ -13,7 +13,6 @@ const Typography: React.FC<TypographyProps> = ({
   marginRight = 0,
   ellipsis = false,
   marginTop = 0,
-  hover = false,
   children,
 }) => {
   return (
@@ -28,7 +27,6 @@ const Typography: React.FC<TypographyProps> = ({
       ellipsis={ellipsis}
       marginTop={marginTop}
       marginRight={marginRight}
-      hover={hover}
     >
       {children}
     </Styles.Root>

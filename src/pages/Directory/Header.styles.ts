@@ -64,5 +64,9 @@ export const NavMenuItem = styled.li`
   :hover {
     background-color: #6277f0;
     border-radius: 4px;
+
+    div {
+      color: white;
+    }
   }
 `;

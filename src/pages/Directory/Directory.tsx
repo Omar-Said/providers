@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { fetchProviders } from "../../api";
-import { IMakePartialRepresentation } from "../../interfaces/api";
+import { IMakePartialRepresentation } from "../../api";
 import ProfileCard from "./ProfileCard";
-import { Helmet } from "react-helmet";
 import Header from "./Header";
 import { provinceByAbbr } from "../../utils/provinces";
 import * as Styles from "./Directory.styles";
 import Typography from "../../components/Typography";
 import FlexWrapper from "../../components/FlexWrapper";
 import Spinner from "../../components/Spinner/Spinner";
+import TabTitle from "../../components/Helmet/Helmet";
 
 const DEFAULT_PROVINCE = "ON";
 
@@ -28,20 +28,23 @@ export default function Directory() {
     setSelectedProvince(province);
   };
 
+  const loadProviders = useCallback(async () => {
+    const data = await fetchProviders();
+    setProviders(data);
+    setLoading(false);
+  }, []);
+
   useEffect(() => {
-    const loadProviders = async () => {
-      const data = await fetchProviders();
-      setProviders(data);
-      setLoading(false);
-    };
     loadProviders();
   }, []);
 
+  const provinceByAbbrevation = useMemo(() => {
+    return provinceByAbbr(selectedProvince);
+  }, [selectedProvince]);
+
   return (
     <Styles.Root>
-      <Helmet>
-        <title>Provider Directory</title>
-      </Helmet>
+      <TabTitle title="Provider Directory" />
       <Header
         onSelectProvince={handleSelectProvince}
         selectedProvince={selectedProvince}
@@ -64,7 +67,7 @@ export default function Directory() {
               color={"#3F4145"}
               fontWeight={400}
             >
-              providers in {provinceByAbbr(selectedProvince)}
+              providers in {provinceByAbbrevation}
             </Typography>
           </FlexWrapper>
 

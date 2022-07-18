@@ -1,14 +1,14 @@
-import React from "react";
 import FlexWrapper from "../../components/FlexWrapper";
 import Typography from "../../components/Typography";
-import * as Styles from "./ProfileDetails.styles";
+import * as Styles from "./Details.styles";
 
-interface IProfileCard {
+interface IDetails {
   icon: string;
   detail: string;
+  title: string;
 }
 
-function ProfileDetails({ detail, icon }: IProfileCard) {
+function Details({ title, detail, icon }: IDetails) {
   return (
     <FlexWrapper marginTop={16}>
       <Styles.ProfileDetails>
@@ -22,7 +22,7 @@ function ProfileDetails({ detail, icon }: IProfileCard) {
           fontWeight={400}
           marginTop={6}
         >
-          Location
+          {title}
         </Typography>
         <Typography
           fontSize={14}
@@ -38,4 +38,4 @@ function ProfileDetails({ detail, icon }: IProfileCard) {
   );
 }
 
-export default ProfileDetails;
+export default Details;

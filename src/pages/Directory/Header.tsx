@@ -84,7 +84,6 @@ function Header({ onSelectProvince, selectedProvince }: IHeader) {
                   fontWeight={500}
                   lineHeight={16.8}
                   color={"#3F4145"}
-                  hover
                 >
                   {province.name}
                 </Typography>
