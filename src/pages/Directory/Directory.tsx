@@ -36,7 +36,7 @@ export default function Directory() {
 
   useEffect(() => {
     loadProviders();
-  }, []);
+  }, [loadProviders]);
 
   const provinceByAbbrevation = useMemo(() => {
     return provinceByAbbr(selectedProvince);

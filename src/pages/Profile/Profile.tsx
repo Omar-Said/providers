@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import { fetchProvider } from "../../api";
 import Typography from "../../components/Typography";
