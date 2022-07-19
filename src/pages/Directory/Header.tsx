@@ -3,7 +3,7 @@ import * as Styles from "./Header.styles";
 import locationPin from "../../assets/icons/locationPin.svg";
 import Typography from "../../components/Typography";
 import { provinces } from "../../utils/provinces";
-import ArrowIcon from "../../assets/icons/readLess.png";
+import ArrowIcon from "../../assets/icons/ArrowIcon.svg";
 
 interface IHeader {
   onSelectProvince: (province: string) => void;

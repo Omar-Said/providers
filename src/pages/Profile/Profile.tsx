@@ -8,7 +8,7 @@ import FlexWrapper from "../../components/FlexWrapper";
 import * as Styles from "./Profile.styles";
 import Avatar from "../../components/Avatar";
 import Container from "../../components/Container";
-import ReadLess from "../../assets/icons/readLess.png";
+import ReadLess from "../../assets/icons/ArrowIcon.svg";
 import LocationMarker from "../../assets/icons/locationMarker.svg";
 import Education from "../../assets/icons/education.svg";
 import Language from "../../assets/icons/language.svg";
