@@ -34,7 +34,7 @@ function Profile() {
         }
         setLoading(false);
       } catch (error: any) {
-        console.log(error);
+        console.error(error);
         setArror(error);
         setLoading(false);
       }
